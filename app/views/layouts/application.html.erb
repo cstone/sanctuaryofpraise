@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sanctuaryofpraise</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+  <title>Sanctuary of Praise Fellowship</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <%= render 'layouts/structure/header-scripts' %>
+
+  <%= stylesheet_link_tag "mytheme" %>
+  <%= stylesheet_link_tag "mystyles" %>
+
 </head>
+
 <body>
 
-<%= yield %>
+<%= render 'layouts/structure/masthead' %>
+
+
+<%= render 'layouts/structure/navigation' %>
+
+
+<%= render 'layouts/structure/promo' %>
+
+
+
+<div class="content-container">
+  <div class="row">
+    <div class=" col-md-8 col-lg-9">
+      <%= yield %>
+    </div>
+    <div class=" col-md-4 col-lg-3">
+      <%= render 'layouts/structure/right-side' %>
+    </div>
+  </div>
+
+</div>
+
+
+
+<%= render 'layouts/structure/footer' %>
+<%= render 'layouts/structure/footer-scripts' %>
+
 
 </body>
 </html>
