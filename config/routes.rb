@@ -1,5 +1,8 @@
 Sanctuaryofpraise::Application.routes.draw do
 
+
+
+
   root to: "home#index"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -8,6 +11,7 @@ Sanctuaryofpraise::Application.routes.draw do
   resources :prayer_requests
   resources :events
   resources :pages
+  resources :articles
 
   match ':id', to: 'pages#show', as: :page
 
