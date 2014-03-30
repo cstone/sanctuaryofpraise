@@ -1,50 +1,46 @@
-<p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Events', events_path %></li>
+  <li class="active"><%= @event.title %></li>
+</ol>
+<h3><%= @event.title %></h3>
+<p><%= @event.time %> <% if @event.venue %>at <%= @event.venue %><% end %></p>
+<p><%= simple_format @event.description %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
-
-<p>
-  <b>Venue:</b>
-  <%= @event.venue %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @event.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @event.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @event.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%= @event.zip %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @event.url %>
-</p>
-
-<p>
-  <b>Time:</b>
-  <%= @event.time %>
-</p>
+<table class="table table-bordered">
+  <tr>
+    <td><strong>What:</strong></td>
+    <td><%= @event.title %></td>
+  </tr>
+  <tr>
+    <td width="8%"><strong>When:</strong></td>
+    <td width="92%"><%= @event.time %></td>
+  </tr>
+  <% if !@event.venue.empty? %>
+      <tr>
+        <td><strong>Where:</strong></td>
+        <td><%= @event.venue %></td>
+      </tr>
+  <% end %>
+  <% if !@event.address.empty? %>
+      <tr>
+        <td></td>
+        <td><%= @event.address %> <%= @event.city %>, <%= @event.state %> <%= @event.zip %></td>
+      </tr>
+  <% end %>
+  <% if @event.url %>
+      <tr>
+        <td><strong>Website:</strong></td>
+        <td><%= link_to @event.url, @event.url, target: '_blank' %></td>
+      </tr>
+  <% end %>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+</table>
+<p class="text-right"><%= link_to 'Back to all of Kevin\'s events', events_path, class: '' %></p>
+<hr>
+<%= render 'layouts/structure/disqus-thread' %>
+
+
+
+
