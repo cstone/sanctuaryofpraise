@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+body {
+  /*margin-top:35px;*/
+}
+
+
+.page-container {
+  padding:0 40px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .navbar-brand {
+    float: left;
+    margin-right: 5px;
+    margin-left: -15px;
+  }
+  .navbar-nav {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .navbar-nav > li {
+    float: left;
+  }
+  .navbar-nav > li > a {
+    border-radius: 0;
+  }
+  .navbar-nav.pull-right {
+    float: right;
+    width: auto;
+  }
+  .navbar-toggle {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: none;
+  }
+  .nav-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/*************************************
+**************************************
+**************************************
+
+    BEGIN HEADER STYLES
+
+**************************************
+**************************************
+**************************************/
+.logobar {
+  padding: 10px 0;
+}
+
+
+
+/*************************************
+**************************************
+**************************************
+
+     END HEADER STYLES
+
+**************************************
+**************************************
+**************************************/
+
+
+
+
+
+/*************************************
+**************************************
+**************************************
+
+    BEGIN NAV STYLES
+
+**************************************
+**************************************
+**************************************/
+.navbar {
+  margin-bottom: 0;
+}
+
+.navcontainer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+
+#nav.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:10;
+}
+
+/*************************************
+**************************************
+**************************************
+
+     END NAV STYLES
+
+**************************************
+**************************************
+**************************************/
+
+
+
+
+
+/*************************************
+**************************************
+**************************************
+
+    BEGIN CONTENT STYLES
+
+**************************************
+**************************************
+**************************************/
+
+
+.fancy-name {
+  font-family: 'Lora', serif;
+}
+
+.small-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content-container {
+  padding: 15px;
+}
+
+.promo-container {
+  padding: 20px 15px;
+  background-color: #A371C7;
+  color: #F1F1F1;
+}
+
+.promo-container a {
+  color: #F1F1F1;
+  text-decoration:underline;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  min-height: 360px;
+}
+
+.jumbotron p {
+  /*color: #2B3E50;*/
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+  color: #485563;
+  font-size: 26px;
+}
+.kevinname {
+  color: #2B3E50;
+  font-size: 46px;
+  font-family: 'Audiowide', cursive;
+}
+.panel-body {
+  color: #FFFFFF;
+}
+
+.content-container-margin-top {
+  margin-top: 40px;
+}
+
+
+.carousel-icons {
+  position: absolute;
+  top: 40%;
+  z-index: 5;
+  display: inline-block;
+}
+
+/*************************************
+**************************************
+**************************************
+
+     END CONTENT STYLES
+
+**************************************
+**************************************
+**************************************/
+
+
+
+
+
+
+/*************************************
+**************************************
+**************************************
+
+     BEGIN FOOTER STYLES
+
+**************************************
+**************************************
+**************************************/
+footer {
+  padding: 8px 15px;
+  background-color: #64467A;
+  color: #F1F1F1;
+}
+
+footer p {
+  padding-top: 10px;
+}
+
+footer a {
+  /*color: #428BCA;*/
+  color: #FFFFFF;
+&:hover {
+  color: #FFFFFF;
+}
+}
+
+footer .nav > li > a:hover {
+  background-color: #FFFFFF;
+}
+
+/*************************************
+**************************************
+**************************************
+
+     END FOOTER STYLES
+
+**************************************
+**************************************
+**************************************/
+
+
+
+
+
+
+
+
+
+
+
+
