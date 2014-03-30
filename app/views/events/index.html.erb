@@ -1,39 +1,16 @@
-<h1>Listing events</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Venue</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Url</th>
-    <th>Time</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li class="active">Upcoming Events</li>
+</ol>
+<h3>Upcoming Events</h3>
+<br/>
 <% @events.each do |event| %>
-  <tr>
-    <td><%= event.title %></td>
-    <td><%= event.description %></td>
-    <td><%= event.venue %></td>
-    <td><%= event.address %></td>
-    <td><%= event.city %></td>
-    <td><%= event.state %></td>
-    <td><%= event.zip %></td>
-    <td><%= event.url %></td>
-    <td><%= event.time %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <h4><%= link_to event.title, event %></h4>
+    <p><strong><%= event.time %></strong></p>
+    <p><%= event.venue %></p>
+    <p><%= event.description.truncate(250) %></p>
+    <p><%= link_to 'More Info', event, class: 'btn btn-sm btn-primary pull-right' %></p>
+    <br/>
+    <hr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Event', new_event_path %>
+<%= paginate @events %>
