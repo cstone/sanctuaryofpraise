@@ -1,4 +1,7 @@
 Sanctuaryofpraise::Application.routes.draw do
+  resources :prayer_requests
+
+
   resources :events
 
 
