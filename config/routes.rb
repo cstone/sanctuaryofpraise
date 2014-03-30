@@ -1,14 +1,13 @@
 Sanctuaryofpraise::Application.routes.draw do
-  resources :prayer_requests
-
-
-  resources :events
-
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  resources :prayer_requests
+  resources :events
   resources :pages
+
+  match ':id', to: 'pages#show', as: :page
 
 
   # The priority is based upon order of creation:
