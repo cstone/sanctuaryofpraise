@@ -1,0 +1,5 @@
+<% @page_header = "#{@page.title}" %>
+<% if @page.page_image.url %>
+    <%= image_tag @page.page_image.url, class: 'img-float-right img-responsive' %>
+<% end %>
+<%= simple_format @page.content %>
