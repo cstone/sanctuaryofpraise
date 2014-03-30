@@ -1,0 +1,11 @@
+<%= semantic_form_for @prayer_request do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :approved %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
