@@ -1,5 +1,8 @@
 Sanctuaryofpraise::Application.routes.draw do
 
+  resources :photos
+
+
   root to: "home#index"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
