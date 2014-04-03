@@ -1,31 +1,17 @@
-<h1>Listing articles</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Article image</th>
-    <th>Allow comments</th>
-    <th>Active</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li class="active">Blog</li>
+</ol>
+<h3>Our Blog</h3>
 <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.body %></td>
-    <td><%= article.article_image %></td>
-    <td><%= article.allow_comments %></td>
-    <td><%= article.active %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <h4><%= link_to_unless_current article.title, article %></h4>
+    <p><% if article.article_image.url  %>
+          <%= link_to(image_tag(article.article_image.url(:thumb), class: 'img-float-right img-responsive'), article) %>
+      <% end %>
+      <%= simple_format article.body.truncate(225) %>
+    </p>
+    <p><small><%= time_ago_in_words(article.created_at) %> ago</small></p>
+    <br/>
+    <hr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Article', new_article_path %>
+<%= paginate @articles %>
