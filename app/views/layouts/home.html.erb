@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-  <title>Sanctuary of Praise Fellowship</title>
+  <title><% if @page_title %><%= @page_title %>  ::  <% end %>Sanctuary of Praise Fellowship</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
