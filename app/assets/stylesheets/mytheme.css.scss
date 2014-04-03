@@ -3048,22 +3048,24 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
   color: #ebebeb;
 }
 .breadcrumb {
-  padding: 8px 15px;
+  padding: 8px 15px 8px 0;
   margin-bottom: 21px;
   list-style: none;
-  background-color: #A371C7;
+  background-color: #FFFFFF;
   border-radius: 0;
+  font-size: 13px;
 }
 .breadcrumb>li {
   display: inline-block;
 }
 .breadcrumb>li+li:before {
-  content: "/\00a0";
+//  content: "/\00a0";
+  content: ">>";
   padding: 0 5px;
-  color: #ebebeb;
+  color: #64467A;
 }
 .breadcrumb>.active {
-  color: #ebebeb;
+  color: #64467A;
 }
 .pagination {
   display: inline-block;
