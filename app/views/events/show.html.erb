@@ -5,8 +5,9 @@
 </ol>
 <h3><%= @event.title %></h3>
 <p><%= @event.time %> <% if @event.venue %>at <%= @event.venue %><% end %></p>
-<p><%= simple_format @event.description %></p>
+<p><%= raw @event.description %></p>
 
+<div class="well">
 <table class="table table-bordered">
   <tr>
     <td><strong>What:</strong></td>
@@ -37,8 +38,9 @@
 
 
 </table>
-<p class="text-right"><%= link_to 'Back to all of Kevin\'s events', events_path, class: '' %></p>
-<hr>
+</div>
+<p class="text-right"><%= link_to 'Back to all events', events_path, class: '' %></p>
+
 <%= render 'layouts/structure/disqus-thread' %>
 
 
