@@ -1,7 +1,7 @@
 class PrayerRequestsController < ApplicationController
 
   def index
-    @prayer_requests = PrayerRequest.active.page(params[:page]).per(10)
+    @prayer_requests = PrayerRequest.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,28 +22,64 @@ class PrayerRequestsController < ApplicationController
   # GET /prayer/new
   # GET /events/new.json
   def new
-    @event = Event.new
+    @prayer_request = PrayerRequest.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @event }
+      format.json { render json: @prayer_request }
     end
+  end
+
+
+  # GET /photos/1/edit
+  def edit
+    @prayer_request = PrayerRequest.find(params[:id])
   end
 
 
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(params[:event])
+    @prayer_request = PrayerRequest.new(params[:event])
 
     respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render json: @event, status: :created, location: @event }
+      if @prayer_request.save
+        format.html { redirect_to @prayer_request, notice: 'PrayerRequest was successfully created.' }
+        format.json { render json: @prayer_request, status: :created, location: @prayer_request }
       else
         format.html { render action: "new" }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.json { render json: @prayer_request.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+
+
+  # PUT /photos/1
+  # PUT /photos/1.json
+  def update
+    @prayer_request = PrayerRequest.find(params[:id])
+
+    respond_to do |format|
+      if @prayer_request.update_attributes(params[:photo])
+        format.html { redirect_to @prayer_request, notice: 'PrayerRequest was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @prayer_request.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /photos/1
+  # DELETE /photos/1.json
+  def destroy
+    @prayer_request = PrayerRequest.find(params[:id])
+    @prayer_request.destroy
+
+    respond_to do |format|
+      format.html { redirect_to prayer_requests_path }
+      format.json { head :no_content }
     end
   end
 end
