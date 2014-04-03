@@ -1,4 +1,4 @@
-Time::DATE_FORMATS[:default] = '%m/%d/%Y %I:%M %P'
+Time::DATE_FORMATS[:default] = '%B %d, %Y %I:%M %P'
 
 Time::DATE_FORMATS[:date_only] = '%m/%d/%Y'
 
