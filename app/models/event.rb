@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   attr_accessible :address, :city, :description, :state, :time, :title, :url, :venue, :zip
 
+  just_define_datetime_picker :time, :add_to_attr_accessible => true
+
   validates_presence_of :title, :description, :time
 
   scope :active, where("time >= ?", Time.now).order("time")

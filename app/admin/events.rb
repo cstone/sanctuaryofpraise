@@ -18,7 +18,7 @@ ActiveAdmin.register Event do
       f.input :state
       f.input :zip
       f.input :url
-      f.input :time
+      f.input :time, :as => :just_datetime_picker
     end
     f.actions
   end

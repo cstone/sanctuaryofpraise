@@ -38,6 +38,7 @@ gem 'activeadmin'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'active_admin_editor'
+gem 'just-datetime-picker'
 
 
 
