@@ -1,14 +1,12 @@
 <ol class="breadcrumb">
   <li><%= link_to 'Home', root_path %></li>
   <li><%= link_to 'Articles', articles_path %></li>
-  <li class="active"><%= @article.title %></li>
+  <li class="active"><%= @article.title.truncate(75) %></li>
 </ol>
 <h3><%= @article.title %></h3>
 <p><i>Posted <%= time_ago_in_words(@article.created_at) %> ago</i></p>
-<p><% if @article.article_image.url %>
-      <%= image_tag @article.article_image.url, class: 'img-float-right img-responsive' %>
-  <% end %>
-  <%= simple_format(@article.body) %></p>
+<p>
+  <%= raw @article.body %></p>
 <% if @article.allow_comments %>
     <%= render 'layouts/structure/disqus-thread' %>
 <% end %>
