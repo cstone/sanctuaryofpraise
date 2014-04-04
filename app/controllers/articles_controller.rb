@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.page(params[:page]).per(10)
+    @articles = Article.active.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
