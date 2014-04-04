@@ -1,7 +1,7 @@
 <ol class="breadcrumb">
   <li><%= link_to 'Home', root_path %></li>
   <li><%= link_to 'Articles', articles_path %></li>
-  <li class="active"><%= @article.title.truncate(75) %></li>
+  <li class="active"><%= @article.title.truncate(50) %></li>
 </ol>
 <h3><%= @article.title %></h3>
 <p><i>Posted <%= time_ago_in_words(@article.created_at) %> ago</i></p>
