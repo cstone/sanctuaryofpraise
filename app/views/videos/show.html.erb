@@ -1,25 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @video.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @video.description %>
-</p>
-
-<p>
-  <b>Source:</b>
-  <%= @video.source %>
-</p>
-
-<p>
-  <b>Allow comments:</b>
-  <%= @video.allow_comments %>
-</p>
-
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Articles', articles_path %></li>
+  <li class="active"><%= @video.title.truncate(50) %></li>
+</ol>
+<h3><%= @video.title %></h3>
+<p class="small"><i>Posted <%= time_ago_in_words(@video.created_at) %> ago</i></p>
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/<%= @video.source %>?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p><%= raw @video.description %></p>
+<% if @video.allow_comments %>
+    <%= render 'layouts/structure/disqus-thread' %>
+<% end %>

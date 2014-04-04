@@ -1,29 +1,13 @@
-<h1>Listing videos</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Source</th>
-    <th>Allow comments</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li class="active">Videos</li>
+</ol>
 <% @videos.each do |video| %>
-  <tr>
-    <td><%= video.title %></td>
-    <td><%= video.description %></td>
-    <td><%= video.source %></td>
-    <td><%= video.allow_comments %></td>
-    <td><%= link_to 'Show', video %></td>
-    <td><%= link_to 'Edit', edit_video_path(video) %></td>
-    <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <h4><%= link_to video.title, video %></h4>
+    <p>
+      <%= raw video.description.truncate(225) %>
+    </p>
+    <p><small><%= time_ago_in_words(video.created_at) %> ago</small></p>
+    <hr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Video', new_video_path %>
+<%= paginate @videos %>
