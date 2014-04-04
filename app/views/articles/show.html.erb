@@ -4,7 +4,7 @@
   <li class="active"><%= @article.title.truncate(50) %></li>
 </ol>
 <h3><%= @article.title %></h3>
-<p><i>Posted <%= time_ago_in_words(@article.created_at) %> ago</i></p>
+<p class="small"><i>Posted <%= time_ago_in_words(@article.created_at) %> ago</i></p>
 <p>
   <%= raw @article.body %></p>
 <% if @article.allow_comments %>
