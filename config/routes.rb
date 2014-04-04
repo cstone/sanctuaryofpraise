@@ -1,5 +1,8 @@
 Sanctuaryofpraise::Application.routes.draw do
 
+  resources :videos
+
+
   resources :announcements
 
 
