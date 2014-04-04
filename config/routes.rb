@@ -8,7 +8,7 @@ Sanctuaryofpraise::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :prayer_requests
+  resources :prayer_requests, except: [:edit, :update, :destroy]
   resources :events
   resources :pages
   resources :articles
