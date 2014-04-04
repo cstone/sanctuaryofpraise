@@ -2,16 +2,12 @@
   <li><%= link_to 'Home', root_path %></li>
   <li class="active">Blog</li>
 </ol>
-<h3>Our Blog</h3>
 <% @articles.each do |article| %>
     <h4><%= link_to_unless_current article.title, article %></h4>
-    <p><% if article.article_image.url  %>
-          <%= link_to(image_tag(article.article_image.url(:thumb), class: 'img-float-right img-responsive'), article) %>
-      <% end %>
-      <%= simple_format article.body.truncate(225) %>
+    <p>
+      <%= raw article.body.truncate(225) %>
     </p>
     <p><small><%= time_ago_in_words(article.created_at) %> ago</small></p>
-    <br/>
     <hr>
 <% end %>
 <%= paginate @articles %>
