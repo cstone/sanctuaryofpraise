@@ -1,10 +1,10 @@
 <ol class="breadcrumb">
   <li><%= link_to 'Home', root_path %></li>
   <li><%= link_to 'Articles', announcements_path %></li>
-  <li class="active"><%= @announcement.title.truncate(75) %></li>
+  <li class="active"><%= @announcement.title.truncate(50) %></li>
 </ol>
 <h3><%= @announcement.title %></h3>
-<p><i>Posted <%= time_ago_in_words(@announcement.created_at) %> ago</i></p>
+<p class="small"><i>Posted <%= time_ago_in_words(@announcement.created_at) %> ago</i></p>
 <p><%= raw @announcement.content %></p>
 <% if @announcement.allow_comments %>
     <%= render 'layouts/structure/disqus-thread' %>
