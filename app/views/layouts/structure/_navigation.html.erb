@@ -15,17 +15,22 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><%= link_to 'About Our Pastor', page_path('about-our-pastor') %></li>
-              <li><%= link_to 'History', page_path('history') %></li>
-              <li><%= link_to 'Ministries', page_path('ministries') %></li>
+              <li class=<%= cpa(page_path('about-our-pastor')) %>><%= link_to 'About Our Pastor', page_path('about-our-pastor') %></li>
+              <li class=<%= cpa(page_path('history')) %>><%= link_to 'History', page_path('history') %></li>
+              <li class=<%= cpa(page_path('ministries')) %>><%= link_to 'Ministries', page_path('ministries') %></li>
             </ul>
           </li>
-          <li><%= link_to 'Events', events_path %></li>
-          <li><%= link_to 'Photos', photos_path %></li>
-          <li><%= link_to 'Blog', blog_path %></li>
-          <li><%= link_to 'Prayer Requests', prayer_requests_path %></li>
-          <li><%= link_to 'Directions', page_path('directions') %></li>
-          <li><%= link_to 'Contact Us', page_path('contact-us') %></li>
+          <li class=<%= cpa(events_path) %>><%= link_to 'Events', events_path %></li>
+          <li class=<%= cpa(blog_path) %>><%= link_to 'Blog', blog_path %></li>
+          <li class=<%= cpa(prayer_requests_path) %>><%= link_to 'Prayer Requests', prayer_requests_path %></li>
+          <li class=<%= cpa(page_path('contact-us')) %>><%= link_to 'Contact Us', page_path('contact-us') %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class=<%= cpa(photos_path) %>><%= link_to 'Photos', photos_path %></li>
+              <li class=<%= cpa(page_path('directions')) %>><%= link_to 'Directions', page_path('directions') %></li>
+            </ul>
+          </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
