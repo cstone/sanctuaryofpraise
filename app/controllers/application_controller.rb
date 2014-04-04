@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
 
   def get_dynamic_content
     @side_upcoming_events = Event.upcoming
+    @site_name = DynamicContent.get_value(:home_content)
   end
 end
