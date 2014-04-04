@@ -1,20 +1,12 @@
-<p id="notice"><%= notice %></p>
-
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Prayer Requests', prayer_requests_path %></li>
+  <li class="active"><%= @prayer_request.title.truncate(75) %></li>
+</ol>
+<h3><%= @prayer_request.title %></h3>
+<p><i>Prayer request submitted <%= time_ago_in_words(@prayer_request.created_at) %> ago</i></p>
 <p>
-  <b>Title:</b>
-  <%= @prayer_request.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @prayer_request.content %>
-</p>
-
-<p>
-  <b>Approved:</b>
-  <%= @prayer_request.approved %>
-</p>
-
-
-<%= link_to 'Edit', edit_prayer_request_path(@prayer_request) %> |
-<%= link_to 'Back', prayer_requests_path %>
+  <%= raw @prayer_request.content %></p>
+<% if @prayer_request.allow_comments %>
+    <%= render 'layouts/structure/disqus-thread' %>
+<% end %>
