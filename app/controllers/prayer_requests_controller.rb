@@ -31,12 +31,6 @@ class PrayerRequestsController < ApplicationController
   end
 
 
-  # GET /photos/1/edit
-  def edit
-    @prayer_request = PrayerRequest.find(params[:id])
-  end
-
-
   # POST /events
   # POST /events.json
   def create
@@ -53,33 +47,4 @@ class PrayerRequestsController < ApplicationController
     end
   end
 
-
-
-  # PUT /photos/1
-  # PUT /photos/1.json
-  def update
-    @prayer_request = PrayerRequest.find(params[:id])
-
-    respond_to do |format|
-      if @prayer_request.update_attributes(params[:photo])
-        format.html { redirect_to @prayer_request, notice: 'PrayerRequest was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @prayer_request.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /photos/1
-  # DELETE /photos/1.json
-  def destroy
-    @prayer_request = PrayerRequest.find(params[:id])
-    @prayer_request.destroy
-
-    respond_to do |format|
-      format.html { redirect_to prayer_requests_path }
-      format.json { head :no_content }
-    end
-  end
 end
