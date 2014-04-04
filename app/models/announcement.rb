@@ -5,8 +5,8 @@ class Announcement < ActiveRecord::Base
 
   default_scope order('created_at DESC')
 
-  scope :active, where("expires <= ?", Time.now).order('created_at DESC')
-  scope :inactive, where("expires >= ?", Time.now).order('created_at DESC')
+  scope :active, where("expires >= ?", Time.now).order('created_at DESC')
+  scope :inactive, where("expires <= ?", Time.now)
 
 
   def delete_inactive
