@@ -1,5 +1,5 @@
 class Announcement < ActiveRecord::Base
-  attr_accessible :content, :expires, :title
+  attr_accessible :content, :expires, :title, :allow_comments
 
   after_save :delete_inactive
 
