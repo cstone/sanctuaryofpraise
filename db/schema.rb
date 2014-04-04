@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140404150556) do
+ActiveRecord::Schema.define(:version => 20140404165054) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(:version => 20140404150556) do
     t.string   "title"
     t.text     "content"
     t.datetime "expires"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.boolean  "allow_comments"
   end
 
   create_table "articles", :force => true do |t|
