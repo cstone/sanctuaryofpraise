@@ -1,27 +1,12 @@
-<h1>Listing announcements</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Expires</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li class="active">Announcements</li>
+</ol>
 <% @announcements.each do |announcement| %>
-  <tr>
-    <td><%= announcement.title %></td>
-    <td><%= announcement.content %></td>
-    <td><%= announcement.expires %></td>
-    <td><%= link_to 'Show', announcement %></td>
-    <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-    <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <h4><%= link_to announcement.title, announcement %></h4>
+    <p><%= raw announcement.content.truncate(250) %></p>
+    <p><%= link_to 'Details', announcement, class: 'btn btn-sm btn-primary pull-right' %></p>
+    <br/>
+    <hr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Announcement', new_announcement_path %>
+<%= paginate @announcements %>
