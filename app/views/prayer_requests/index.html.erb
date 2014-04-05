@@ -7,6 +7,7 @@
     <h4><%= link_to prayer_request.title, prayer_request %></h4>
     <p><i>Prayer request submitted <%= time_ago_in_words(prayer_request.created_at) %> ago</i></p>
     <p><%= prayer_request.content.truncate(200) %></p>
+    <p><%= link_to 'Read more', prayer_request, class: 'btn btn-sm btn-primary' %></p>
     <hr>
 <% end %>
 
