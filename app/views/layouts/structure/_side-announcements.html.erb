@@ -1,4 +1,4 @@
-<% unless @side_announcements.empty? %>
+<% if controller.controller_name != 'announcements'  && !@side_announcements.empty? %>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><i class="fa fa-bullhorn"></i> <%= link_to 'Announcements', announcements_path %></h3>
