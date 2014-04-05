@@ -13,4 +13,9 @@ class Announcement < ActiveRecord::Base
   def delete_inactive
     Announcement.inactive.destroy_all
   end
+
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end
