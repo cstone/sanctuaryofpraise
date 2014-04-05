@@ -4,9 +4,8 @@
   <li class="active"><%= @prayer_request.title.truncate(75) %></li>
 </ol>
 <h3><%= @prayer_request.title %></h3>
-<p><i>Prayer request submitted <%= time_ago_in_words(@prayer_request.created_at) %> ago</i></p>
-<p>
-  <%= raw @prayer_request.content %></p>
+<p><%= raw @prayer_request.content %></p>
+<p class="small"><i>Submitted <%= time_ago_in_words(@prayer_request.created_at) %> ago</i></p>
 <% if @prayer_request.allow_comments %>
     <%= render 'layouts/structure/disqus-thread' %>
 <% end %>
