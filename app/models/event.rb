@@ -11,4 +11,8 @@ class Event < ActiveRecord::Base
   scope :upcoming, where("time >= ?", Time.now).order("time").limit(5)
   scope :next_event, where("time >= ?", Time.now).order("time").limit(1)
 
+  def to_param
+    title
+  end
+
 end

@@ -1,5 +1,9 @@
 ActiveAdmin.register Event do
 
+  controller do
+    defaults :finder => :find_by_title
+  end
+
   index do
     selectable_column
     column :title
