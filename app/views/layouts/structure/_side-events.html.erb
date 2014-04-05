@@ -1,4 +1,4 @@
-<% unless @side_upcoming_events.empty? %>
+<% if controller.controller_name != 'events'  && !@side_upcoming_events.empty? %>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><i class="fa fa-calendar"></i> <%= link_to 'Upcoming Events', events_path %></h3>
