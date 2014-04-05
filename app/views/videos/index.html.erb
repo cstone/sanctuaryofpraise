@@ -7,7 +7,7 @@
     <p>
       <%= raw video.description.truncate(225) %>
     </p>
-    <p><%= link_to 'Watch this video', video_path(video), class: 'btn btn-primary' %></p>
+    <p><%= link_to 'Watch this video', video_path(video), class: 'btn btn-sm btn-primary' %></p>
     <hr>
 <% end %>
 <%= paginate @videos %>
