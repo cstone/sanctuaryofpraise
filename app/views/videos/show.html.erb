@@ -1,11 +1,14 @@
 <ol class="breadcrumb">
   <li><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Articles', articles_path %></li>
+  <li><%= link_to 'Videos', videos_path %></li>
   <li class="active"><%= @video.title.truncate(50) %></li>
 </ol>
 <h3><%= @video.title %></h3>
 <p class="small"><i>Posted <%= time_ago_in_words(@video.created_at) %> ago</i></p>
-<p><iframe width="560" height="315" src="//www.youtube.com/embed/<%= @video.source %>?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<div class="video-container">
+  <iframe src="//www.youtube.com/embed/<%= @video.source %>?rel=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+<br/>
 <p><%= raw @video.description %></p>
 <% if @video.allow_comments %>
     <%= render 'layouts/structure/disqus-thread' %>
