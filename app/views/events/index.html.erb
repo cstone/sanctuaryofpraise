@@ -6,8 +6,7 @@
     <h4><%= link_to event.title, event %></h4>
     <p><%= event.time %></p>
     <p><%= raw event.description.truncate(250) %></p>
-    <p><%= link_to 'More info', event, class: 'btn btn-sm btn-primary pull-right' %></p>
-    <br/>
+    <p><%= link_to 'More info', event, class: 'btn btn-sm btn-primary' %></p>
     <hr>
 <% end %>
 <%= paginate @events %>
