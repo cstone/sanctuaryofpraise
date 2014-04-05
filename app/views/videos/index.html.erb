@@ -7,7 +7,7 @@
     <p>
       <%= raw video.description.truncate(225) %>
     </p>
-    <p><small><%= time_ago_in_words(video.created_at) %> ago</small></p>
+    <p><%= link_to 'Watch this video', videos_path, class: 'btn btn-primary' %></p>
     <hr>
 <% end %>
 <%= paginate @videos %>
