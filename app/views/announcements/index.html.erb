@@ -5,7 +5,7 @@
 <% @announcements.each do |announcement| %>
     <h4><%= link_to announcement.title, announcement %></h4>
     <p><%= raw announcement.content.truncate(250) %></p>
-    <p><%= link_to 'Read announcement', announcement, class: 'btn btn-sm btn-primary' %></p>
+    <p><%= link_to 'Read this announcement', announcement, class: 'btn btn-sm btn-primary' %></p>
     <hr>
 <% end %>
 <%= paginate @announcements %>
