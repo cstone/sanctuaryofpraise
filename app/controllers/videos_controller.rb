@@ -13,7 +13,7 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
-    @video = Video.find_by_title!(params[:id])
+    @video = Video.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
