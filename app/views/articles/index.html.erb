@@ -8,6 +8,8 @@
       <%= raw article.body.truncate(225) %>
     </p>
     <p><small><%= time_ago_in_words(article.created_at) %> ago</small></p>
+    <p><%= link_to 'Read more', article, class: 'btn btn-sm btn-primary' %></p>
+
     <hr>
 <% end %>
 <%= paginate @articles %>
