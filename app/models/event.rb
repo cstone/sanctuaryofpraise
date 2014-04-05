@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
   scope :next_event, where("time >= ?", Time.now).order("time").limit(1)
 
   def to_param
-    title
+    "#{id}-#{title.parameterize}"
   end
 
 end
