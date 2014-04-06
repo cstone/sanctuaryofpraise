@@ -20,8 +20,8 @@ module Sanctuaryofpraise
 
     config.assets.initialize_on_precompile = false
 
-    config.assets.precompile += ['mytheme.css.scss']
-    config.assets.precompile += ['mystyles.css.scss']
+    config.assets.precompile += ['mytheme.css']
+    config.assets.precompile += ['mystyles.css']
 
 
     # Settings in config/environments/* take precedence over those specified here.
