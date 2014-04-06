@@ -20,6 +20,9 @@ module Sanctuaryofpraise
 
     config.assets.initialize_on_precompile = false
 
+    config.assets.precompile += ['mytheme.css.scss']
+    config.assets.precompile += ['mystyles.css.scss']
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
