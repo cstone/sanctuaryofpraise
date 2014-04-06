@@ -3,6 +3,8 @@ class Announcement < ActiveRecord::Base
 
   just_define_datetime_picker :expires, :add_to_attr_accessible => true
 
+  validates_presence_of :title, :content
+
   after_save :delete_inactive
 
   default_scope order('created_at DESC')
