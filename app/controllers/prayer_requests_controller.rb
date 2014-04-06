@@ -1,7 +1,7 @@
 class PrayerRequestsController < ApplicationController
 
   def index
-    @prayer_requests = PrayerRequest.all
+    @prayer_requests = PrayerRequest.active
 
     respond_to do |format|
       format.html # index.html.erb
