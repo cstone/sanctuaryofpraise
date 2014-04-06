@@ -2,6 +2,7 @@
   <li><%= link_to 'Home', root_path %></li>
   <li class="active">Videos</li>
 </ol>
+<p><%= @videos_home %></p><br/>
 <% @videos.each do |video| %>
     <h4><%= link_to video.title, video %></h4>
     <p>

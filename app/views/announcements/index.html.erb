@@ -2,6 +2,7 @@
   <li><%= link_to 'Home', root_path %></li>
   <li class="active">Announcements</li>
 </ol>
+<p><%= @announcements_home %></p>
 <% @announcements.each do |announcement| %>
     <h4><%= link_to announcement.title, announcement %></h4>
     <p><%= raw announcement.content.truncate(250) %></p>

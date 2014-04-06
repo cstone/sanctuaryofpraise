@@ -2,6 +2,7 @@
   <li><%= link_to 'Home', root_path %></li>
   <li class="active">Events</li>
 </ol>
+<p><%= @events_home %></p>
 <% @events.each do |event| %>
     <h4><%= link_to event.title, event %></h4>
     <p><%= event.time %></p>

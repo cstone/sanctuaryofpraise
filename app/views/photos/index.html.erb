@@ -2,6 +2,7 @@
   <li><%= link_to 'Home', root_path %></li>
   <li class="active">Photos</li>
 </ol>
+<p><%= @photos_home %></p>
 <table width="100%" class="table table-bordered">
   <% @photos.each do |photo| %>
       <% if photo.photo_image.url(:thumb) %>
