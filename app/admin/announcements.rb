@@ -1,5 +1,16 @@
 ActiveAdmin.register Announcement do
 
+  form do |f|
+    f.inputs do
+      f.input :title
+      f.input :content, as: :html_editor
+      f.input :expires, as: :just_datetime_picker
+      f.input :allow_comments
+    end
+    f.actions
+  end
+
+
   index do
     selectable_column
     column :title do |title|
@@ -24,14 +35,6 @@ ActiveAdmin.register Announcement do
 
 
 
-  form do |f|
-    f.inputs do
-      f.input :title
-      f.input :content, as: :html_editor
-      f.input :expires, as: :just_datetime_picker
-      f.input :allow_comments
-    end
-    f.actions
-  end
+
 
 end
