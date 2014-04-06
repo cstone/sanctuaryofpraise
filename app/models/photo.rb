@@ -3,5 +3,5 @@ class Photo < ActiveRecord::Base
 
   mount_uploader :photo_image, PhotoImageUploader
 
-  validates_presence_of :photo_image
+  validates_presence_of :photo_image, :title, :description
 end
