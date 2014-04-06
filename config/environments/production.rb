@@ -1,6 +1,9 @@
 Sanctuaryofpraise::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # config/environments/production.rb
+  config.initialize_on_precompile = true
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -65,6 +68,5 @@ Sanctuaryofpraise::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # config/environments/production.rb
-  config.initialize_on_precompile = true
+
 end
