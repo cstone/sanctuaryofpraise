@@ -34,7 +34,7 @@ class PrayerRequestsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @prayer_request = PrayerRequest.new(params[:event])
+    @prayer_request = PrayerRequest.new(params[:prayer_request])
 
     respond_to do |format|
       if @prayer_request.save
