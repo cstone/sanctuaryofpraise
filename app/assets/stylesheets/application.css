@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require formtastic-bootstrap
- *= require mytheme
- *= require mystyles
+ *= require_tree .
  */
 
