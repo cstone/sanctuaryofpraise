@@ -1,15 +1,13 @@
 ActiveAdmin.register Page do
-  #controller do
-  #  defaults :finder => :find_by_permalink
-  #end
+
 
   index do
     selectable_column
-    #column :page_image do |page|
-    #  image_tag(page.page_image.url(:thumb))
-    #end
     column :title
     column :permalink
+    column :content do |content|
+      content.content.truncate(75)
+    end
     default_actions
   end
 
@@ -35,14 +33,17 @@ ActiveAdmin.register Page do
       row :title
       row :permalink
       row :content do
-        raw page.content
+        page.content.html_safe
       end
-      #row :page_image do
-      #  image_tag(page.page_image.url(:thumb))
-      #end
-      row :created_at
-      row :updated_at
+      row :created_at do
+      page.created_at.to_formatted_s(:default)
+    end
+      row :updated_at do
+        page.updated_at.to_formatted_s(:default)
+      end
     end
     active_admin_comments
   end
+
+
 end
