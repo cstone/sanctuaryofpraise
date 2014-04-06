@@ -1,8 +1,5 @@
 ActiveAdmin.register Event do
 
-  # controller do
-  #   defaults :finder => :find_by_title
-  # end
 
   index do
     selectable_column
@@ -33,7 +30,7 @@ ActiveAdmin.register Event do
       row :id
       row :title
       row :description do
-        simple_format event.description
+        event.description.html_safe
       end
       row :venue
       row :address
@@ -41,9 +38,15 @@ ActiveAdmin.register Event do
       row :state
       row :zip
       row :url
-      row :time
-      row :created_at
-      row :updated_at
+      row :time do
+        event.time.to_formatted_s(:default)
+      end
+      row :created_at do
+        event.created_at.to_formatted_s(:default)
+    end
+      row :updated_at do
+        event.updated_at.to_formatted_s(:default)
+      end
     end
     active_admin_comments
   end
