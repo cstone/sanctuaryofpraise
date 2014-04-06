@@ -20,7 +20,9 @@ ActiveAdmin.register Announcement do
       content.content.truncate(50)
     end
     column :expires do |expire|
-      expire.expires.to_formatted_s(:default)
+      if expire.expires
+        expire.expires.to_formatted_s(:default)
+      end
     end
     column :allow_comments
     default_actions
