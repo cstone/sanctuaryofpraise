@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class PhotoImageUploader < CarrierWave::Uploader::Base
+class PageImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -8,6 +8,7 @@ class PhotoImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   #storage :file
+  # storage :fog
   storage :fog
 
   include CarrierWave::MimeTypes
@@ -35,7 +36,7 @@ class PhotoImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  process :resize_to_limit => [800, 0]
+  process :resize_to_limit => [225, 0]
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
@@ -44,7 +45,7 @@ class PhotoImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-    process :resize_to_limit => [125, 75]
+    process :resize_to_limit => [100, 0]
   end
 
   # Create different versions of your uploaded files:
