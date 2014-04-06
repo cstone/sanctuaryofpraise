@@ -2,6 +2,7 @@
   <%= f.inputs do %>
     <%= f.input :title, label: 'What is your prayer request?' %>
     <%= f.input :content, label: 'Please describe your prayer request.' %>
+    <%= f.input :allow_comments, :as => :boolean, label: 'Check this box to allow members to post comments on your prayer request.  If unchecked, members will not be able to comment on your prayer request.' %>
   <% end %>
 
   <%= f.actions do %>
