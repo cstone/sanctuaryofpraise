@@ -32,7 +32,26 @@ ActiveAdmin.register Announcement do
   filter :allow_comments
 
 
-
+  show do |announcement|
+    attributes_table do
+      row :id
+      row :title
+      row :content do
+        announcement.content.html_safe
+      end
+      row :expires do
+        announcement.expires.to_formatted_s(:default)
+      end
+      row :allow_comments
+      row :created_at do
+        announcement.created_at.to_formatted_s(:default)
+      end
+      row :updated_at do
+        announcement.updated_at.to_formatted_s(:default)
+      end
+    end
+    active_admin_comments
+  end
 
 
 
