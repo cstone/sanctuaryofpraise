@@ -2,7 +2,7 @@
   <li><%= link_to 'Home', root_path %></li>
   <li class="active">Prayer Requests</li>
 </ol>
-<p><%= @prayer_home %></p>
+<p><%= @prayer_home %></p><br/>
 <%= link_to 'Submit your prayer request', new_prayer_request_path, class: 'btn btn-primary pull-right' %>
 <% @prayer_requests.each do |prayer_request| %>
     <h4><%= link_to prayer_request.title, prayer_request %></h4>

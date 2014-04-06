@@ -2,7 +2,7 @@
   <li><%= link_to 'Home', root_path %></li>
   <li class="active">Blog</li>
 </ol>
-<p><%= @blog_home %></p>
+<p><%= @blog_home %></p><br/>
 <% @articles.each do |article| %>
     <h4><%= link_to_unless_current article.title, article %></h4>
     <p>
