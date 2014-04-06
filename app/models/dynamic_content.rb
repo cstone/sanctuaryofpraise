@@ -1,6 +1,8 @@
 class DynamicContent < ActiveRecord::Base
   attr_accessible :key, :title, :value
 
+  validates_presence_of :title, :key, :value
+
   def self.get_value_in_displayable_format key
     value = get_value key
     value.lines.collect{|line| "<p>#{line}</p>"}.join("")
