@@ -18,13 +18,12 @@ ActiveAdmin.register Page do
       f.input :title
       f.input :permalink
       f.input :content, as: :html_editor
+      f.input :page_image, :as => :file, :hint => f.object.page_image.present? \
+    ? f.template.image_tag(f.object.page_image.url(:thumb))
+      : f.template.content_tag(:span, "no photo yet")
+      f.input :page_image_cache, :as => :hidden
+      f.input :remove_page_image, as: :boolean, label: 'Check here to remove the current image.'
     end
-    f.inputs "Image" do
-      f.file_field :page_image
-    end
-    #f.inputs "Remove Current Image" do
-    #  f.input :remove_page_image, as: :boolean, label: 'Check here to remove the current image.'
-    #end
     f.actions
   end
 
