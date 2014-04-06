@@ -6,7 +6,6 @@
   <div class="panel-body">
     <% @side_announcements.each do |announcement| %>
         <li class="list-group-item"><%= link_to announcement.title.truncate(100), announcement %></li>
-        <li class="list-group-item"><%= link_to 'Read more', announcement %></li>
     <% end %>
   </div>
 </div>
