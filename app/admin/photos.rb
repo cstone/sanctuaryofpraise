@@ -1,5 +1,17 @@
 ActiveAdmin.register Photo do
 
+  form do |f|
+    f.inputs do
+      f.input :title
+      f.input :description, as: :html_editor
+      f.input :photo_image, :as => :file, :hint => f.object.photo_image.present? \
+    ? f.template.image_tag(f.object.photo_image.url(:thumb))
+      : f.template.content_tag(:span, "no photo yet")
+    end
+    f.actions
+  end
+
+
   index do
     selectable_column
     column :photo_image do |photo|
