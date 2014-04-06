@@ -1,6 +1,8 @@
 class Announcement < ActiveRecord::Base
   attr_accessible :content, :expires, :title, :allow_comments
 
+  just_define_datetime_picker :expires, :add_to_attr_accessible => true
+
   after_save :delete_inactive
 
   default_scope order('created_at DESC')
