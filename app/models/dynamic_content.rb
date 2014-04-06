@@ -12,6 +12,12 @@ class DynamicContent < ActiveRecord::Base
     return "Value missing for key #{key}"
   end
 
+  def self.get_title key
+    dynamic_content = DynamicContent.where(key: key).first
+    return dynamic_content.title if !dynamic_content.nil?
+    return "Title missing for key #{key}"
+  end
+
   def self.get_raw_value key
     DynamicContent.where(:key => key).first.try(:value)
   end
