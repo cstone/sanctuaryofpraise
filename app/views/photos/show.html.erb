@@ -1,25 +1,15 @@
-<p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Photos', photos_path %></li>
+  <li class="active"><%= @photo.title %></li>
+</ol>
+<h4><%= @photo.title %></h4>
+<p><small><%= time_ago_in_words(@photo.created_at) %> ago</small></p>
+<p><%= image_tag @photo.photo_image, class: 'img-responsive' %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @photo.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @photo.description %>
-</p>
-
-<p>
-  <b>Photo image:</b>
-  <%= @photo.photo_image %>
-</p>
-
-<p>
-  <b>Allow comments:</b>
-  <%= @photo.allow_comments %>
-</p>
-
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<br/>
+<p><%= @photo.description.html_safe %></p>
+<br/>
+<% if @photo.allow_comments %>
+    <%= render 'layouts/structure/disqus-thread' %>
+<% end %>
