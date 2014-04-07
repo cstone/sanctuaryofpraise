@@ -46,7 +46,9 @@ ActiveAdmin.register Photo do
         photo.description.html_safe
       end
       row :photo_image do
-        image_tag photo.photo_image.url
+        if photo.photo_image.url
+          image_tag photo.photo_image.url
+        end
       end
       row :created_at do
         photo.created_at.to_formatted_s(:default)
@@ -57,5 +59,5 @@ ActiveAdmin.register Photo do
     end
     active_admin_comments
   end
-  
+
 end
