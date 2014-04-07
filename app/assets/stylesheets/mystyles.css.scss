@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+$light-purple: #A371C7;
+$dark-purple: #64467A;
+$white: #FFFFFF;
+$off-white: #F1F1F1;
 
 body {
   /*margin-top:35px;*/
@@ -94,8 +98,6 @@ body {
   padding-right: 15px;
 }
 
-
-
 #nav.affix {
   position: fixed;
   top: 0;
@@ -143,13 +145,13 @@ body {
 
 .promo-container {
   padding: 20px 15px;
-//  background-color: #A371C7;
+//  background-color: $light-purple;
   background: url("https://s3.amazonaws.com/sop-allen/img/bg-promo.jpg") no-repeat;
-  color: #F1F1F1;
+  color: $off-white;
 }
 
 .promo-container a {
-  color: #F1F1F1;
+  color: $off-white;
   text-decoration:underline;
 }
 
@@ -164,13 +166,8 @@ body {
   color: #485563;
   font-size: 26px;
 }
-.kevinname {
-  color: #2B3E50;
-  font-size: 46px;
-  font-family: 'Audiowide', cursive;
-}
 .panel-body {
-  color: #FFFFFF;
+  color: $white;
 }
 
 .content-container-margin-top {
@@ -187,23 +184,31 @@ body {
 
 
 .list-group-item > a {
-  color: #FFFFFF;
+  color: $white;
   font-size: 17px;
 }
 
 .well table {
-  color: #A371C7;
+  color: $light-purple;
 }
 
 .panel-body a.small {
-  color: #FFFFFF;
+  color: $white;
 }
 
 .photobar {
 }
 
 #prayer_request_submit_action.btn:hover {
-  color: #A371C7;
+  color: $light-purple;
+}
+
+
+.img-float-right {
+  float: right;
+  margin: 0 0 5px 10px;
+  border: 1px solid $light-purple;
+  padding: 2px;
 }
 
 /*************************************
@@ -224,7 +229,7 @@ body {
 **************************************
 **************************************
 
-     BEGIN VIDEO STYLES
+     BEGIN VIDEO STYLES FOR RESPONSIVE VIDEO
 
 **************************************
 **************************************
@@ -251,7 +256,7 @@ body {
 **************************************
 **************************************
 
-     END VIDEO STYLES
+     END VIDEO STYLES FOR RESPONSIVE VIDEO
 
 **************************************
 **************************************
@@ -272,8 +277,8 @@ body {
 **************************************/
 footer {
   padding: 8px 15px;
-  background-color: #64467A;
-  color: #F1F1F1;
+  background-color: $dark-purple;
+  color: $off-white;
 }
 
 footer p {
@@ -282,14 +287,14 @@ footer p {
 
 footer a {
   /*color: #428BCA;*/
-  color: #FFFFFF;
+  color: $white;
 &:hover {
-  color: #FFFFFF;
+  color: $white;
 }
 }
 
 footer .nav > li > a:hover {
-  background-color: #FFFFFF;
+  background-color: $white;
 }
 
 /*************************************
