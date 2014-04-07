@@ -4,4 +4,7 @@
   <li class="active"><%= @page.title.truncate(50) %></li>
 </ol>
 
-<%= raw @page.content %>
+<% if @page.page_image.url %>
+    <%= image_tag @page.page_image.url, class: 'img-float-right img-responsive' %>
+<% end %>
+<%= @page.content.html_safe %>
