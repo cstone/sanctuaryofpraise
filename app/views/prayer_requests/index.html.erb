@@ -3,7 +3,7 @@
   <li class="active">Prayer Requests</li>
 </ol>
 <p><%= @prayer_home %></p>
-<p><%= link_to 'Submit your prayer request', new_prayer_request_path, class: 'btn btn-primary' %></p>
+<p><%= link_to 'Submit your prayer request', new_prayer_request_path, class: 'btn btn-primary' %></p><br/>
 <% @prayer_requests.each do |prayer_request| %>
     <h4><%= link_to prayer_request.title, prayer_request %></h4>
     <p class="small"><i>Submitted <%= time_ago_in_words(prayer_request.created_at) %> ago</i></p>
