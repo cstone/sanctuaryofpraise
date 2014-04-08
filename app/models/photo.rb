@@ -4,4 +4,8 @@ class Photo < ActiveRecord::Base
   mount_uploader :photo_image, PhotoImageUploader
 
   validates_presence_of :photo_image, :title, :description
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end
