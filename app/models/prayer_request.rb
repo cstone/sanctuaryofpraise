@@ -3,6 +3,7 @@ class PrayerRequest < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
+  default_scope order('created_at DESC')
   scope :active, where(approved: true)
 
   def to_param
