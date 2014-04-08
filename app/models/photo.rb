@@ -8,4 +8,13 @@ class Photo < ActiveRecord::Base
   def to_param
     "#{id}-#{title.parameterize}"
   end
+
+  def previous_photo
+    self.class.where("id < ?", id).order("id DESC").first
+  end
+
+  def next_photo
+    self.class.where("id > ?", id).first
+  end
+
 end
