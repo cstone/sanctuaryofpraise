@@ -3,6 +3,11 @@ ActiveAdmin.register Page do
 
   index do
     selectable_column
+    column :page_image do |page|
+      if page.page_image.url
+        image_tag page.page_image.url(:thumb)
+      end
+    end
     column :title do |content|
       content.title.truncate(50).html_safe
     end
@@ -33,6 +38,11 @@ ActiveAdmin.register Page do
       row :id
       row :title
       row :permalink
+      row :page_image do
+        if page.page_image.url
+          image_tag page.page_image.url
+        end
+      end
       row :content do
         page.content.html_safe
       end
