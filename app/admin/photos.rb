@@ -19,7 +19,9 @@ ActiveAdmin.register Photo do
   index do
     selectable_column
     column :photo_image do |photo|
-      image_tag photo.photo_image.url(:thumb)
+      if photo.photo_image.url
+        image_tag photo.photo_image.url(:thumb)
+      end
     end
     column :title do |title|
       title.title.truncate(50)
