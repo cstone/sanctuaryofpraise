@@ -5,9 +5,12 @@
 </ol>
 <h4><%= @photo.title %></h4>
 <p class="small"><%= time_ago_in_words(@photo.created_at) %> ago</p>
-<p><%= image_tag @photo.photo_image, class: 'img-responsive' %></p>
 
-<br/>
+<p><%= image_tag @photo.photo_image, class: 'img-responsive' %></p>
+<div class="well">
+  <%= link_to("Previous Photo", @photo.previous_photo) if @photo.previous_photo %>
+  <%= link_to("Next Photo", @photo.next_photo, class: 'pull-right') if @photo.next_photo %>
+</div>
 <p><%= @photo.description.html_safe %></p>
 <br/>
 <% if @photo.allow_comments %>
