@@ -11,11 +11,12 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 
-<%= render 'layouts/structure/header-scripts' %>
+  <%= render 'layouts/structure/header-scripts' %>
 
   <%= stylesheet_link_tag "mytheme" %>
   <%= stylesheet_link_tag "mystyles" %>
 
+  <%= render 'layouts/structure/header-sharethis' %>
 </head>
 
 <body>
@@ -45,6 +46,6 @@
 <%= render 'layouts/structure/footer' %>
 <%= render 'layouts/structure/footer-scripts' %>
 
-
+<%= render 'layouts/structure/side-sharethis' %>
 </body>
 </html>
