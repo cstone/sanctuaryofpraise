@@ -1,4 +1,7 @@
 class AnnouncementsController < ApplicationController
+
+  before_filter :get_page_title
+
   # GET /articles
   # GET /articles.json
   def index
@@ -19,6 +22,10 @@ class AnnouncementsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @announcement }
     end
+  end
+
+  def get_page_title
+    @page_title = "Announcements"
   end
 end
 
