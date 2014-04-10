@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  before_filter :get_page_title
+
   # GET /events
   # GET /events.json
   def index
@@ -79,5 +82,10 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url }
       format.json { head :no_content }
     end
+  end
+
+
+  def get_page_title
+    @page_title = "Events"
   end
 end
