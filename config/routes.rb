@@ -1,14 +1,5 @@
 Sanctuaryofpraise::Application.routes.draw do
 
-  resources :videos
-
-
-  resources :announcements
-
-
-  resources :photos
-
-
   root to: "home#index"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -17,7 +8,10 @@ Sanctuaryofpraise::Application.routes.draw do
   resources :prayer_requests, except: [:edit, :update, :destroy]
   resources :events
   resources :pages
-  resources :articles
+  resources :articles, controller: "blog"
+  resources :videos
+  resources :announcements
+  resources :photos
 
   match 'blog', to: 'articles#index', as: :blog
   match ':id', to: 'pages#show', as: :page
