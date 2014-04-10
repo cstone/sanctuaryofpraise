@@ -8,7 +8,7 @@ Sanctuaryofpraise::Application.routes.draw do
   resources :prayer_requests, except: [:edit, :update, :destroy]
   resources :events
   resources :pages
-  resources :articles, controller: "blog"
+  resources :articles, path: "blog"
   resources :videos
   resources :announcements
   resources :photos
