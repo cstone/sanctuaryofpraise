@@ -1,9 +1,10 @@
 <% @page_header = "#{@page.title}" %>
+<% unless current_page?(root_path) %>
 <ol class="breadcrumb">
   <li><%= link_to 'Home', root_path %></li>
   <li class="active"><%= @page.title.truncate(50) %></li>
 </ol>
-
+<% end %>
 <% if @page.page_image.url %>
     <%= image_tag @page.page_image.url, class: 'img-float-right img-responsive' %>
 <% end %>
