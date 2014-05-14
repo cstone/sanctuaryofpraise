@@ -1,12 +1,50 @@
 <header>
   <div class="content-container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <%= link_to image_tag('https://s3.amazonaws.com/sop-allen/img/logo.jpg'), root_path %>
       </div>
-      <div class="col-sm-6">
-        <div class="pull-right hidden-sm">
+      <div class="col-md-6 hidden-sm">
+        <div class="col-md-12">
+        <div class="row">
+          <ul class="list-inline pull-right">
+            <li>
+              <%= link_to page_path('giving'), class:"btn btn-primary btn-sm" do %>
+                  <i class="fa fa-usd"></i> Give Online
+              <% end %>
+            </li>
+            <li>
+              <%= link_to page_path('times'), class:"btn btn-primary btn-sm" do %>
+                  <i class="fa fa-clock-o"></i> Times & Location
+              <% end %>
+            </li>
+            <li>
+              <%= link_to events_path, class:"btn btn-primary btn-sm" do %>
+                  <i class="fa fa-calendar"></i> Events
+              <% end %>
+            </li>
+          </ul>
         </div>
+        <div class="row">
+          <ul class="list-inline pull-right">
+            <li>
+              <%= link_to @facebook_url do %>
+                  <i class="fa fa-facebook-square fa-2x"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to @twitter_url  do %>
+                  <i class="fa fa-twitter-square fa-2x"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to @instagram_url do %>
+                  <i class="fa fa-instagram fa-2x"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
       </div>
     </div>
   </div>
