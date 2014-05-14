@@ -3,6 +3,17 @@ class ApplicationController < ActionController::Base
 
   before_filter :get_dynamic_content
 
+  layout :set_layout
+
+  def set_layout
+    if request.path == root_path
+     "home"
+    else
+     "application"
+    end
+  end
+
+
   def get_dynamic_content
     @side_upcoming_events = Event.upcoming
     @side_announcements = Announcement.featured
