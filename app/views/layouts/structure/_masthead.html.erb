@@ -27,21 +27,27 @@
         </div>
         <div class="row">
           <ul class="list-inline pull-right">
+            <% if @facebook_url %>
             <li>
               <%= link_to @facebook_url do %>
                   <i class="fa fa-facebook-square fa-2x"></i>
               <% end %>
             </li>
+                <% end %>
+            <% if @instagram_url %>
             <li>
-              <%= link_to @twitter_url  do %>
+              <%= link_to @instagram_url  do %>
                   <i class="fa fa-twitter-square fa-2x"></i>
               <% end %>
             </li>
+                <% end %>
+                <% if @instagram_url %>
             <li>
               <%= link_to @instagram_url do %>
                   <i class="fa fa-instagram fa-2x"></i>
               <% end %>
             </li>
+                <% end %>
           </ul>
         </div>
       </div>
