@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
     @side_upcoming_events = Event.upcoming
     @side_announcements = Announcement.featured
     @site_name = DynamicContent.get_value(:site_name)
+    @facebook_url = DynamicContent.get_value(:facebook_url)
+    @twitter_url = DynamicContent.get_value(:twitter_url)
+    @instagram_url = DynamicContent.get_value(:instagram_url)
     @footer_address = DynamicContent.get_value(:footer_address).html_safe
     @home_content = DynamicContent.get_value(:home_content).html_safe
     @events_home = DynamicContent.get_value(:events_home).html_safe
