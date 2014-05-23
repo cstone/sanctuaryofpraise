@@ -20,9 +20,9 @@ class ApplicationController < ActionController::Base
     @site_name = DynamicContent.get_value(:site_name)
     @facebook_url = DynamicContent.get_value(:facebook_url)
     @twitter_url = DynamicContent.get_value(:twitter_url)
-    @metakeywords = DynamicContent.get_value(:metakeywords)
-    @metadescription = DynamicContent.get_value(:metadescription)
     @instagram_url = DynamicContent.get_value(:instagram_url)
+    @metakeywords = DynamicContent.get_value(:metakeywords).html_safe
+    @metadescription = DynamicContent.get_value(:metadescription).html_safe
     @footer_address = DynamicContent.get_value(:footer_address).html_safe
     @home_content = DynamicContent.get_value(:home_content).html_safe
     @events_home = DynamicContent.get_value(:events_home).html_safe
