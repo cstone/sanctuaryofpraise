@@ -13,7 +13,7 @@ ActiveAdmin.register Page do
     end
     column :permalink
     column :content do |content|
-      content.content.truncate(75).html_safe
+      content.content.truncate(75)
     end
     default_actions
   end
