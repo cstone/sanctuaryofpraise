@@ -5,14 +5,15 @@ $light-purple: #A371C7;
 $dark-purple: #64467A;
 $white: #FFFFFF;
 $off-white: #F1F1F1;
+$gray: #79777A;
 
 body {
   /*margin-top:35px;*/
+  background-color: darken($gray, 30%);
 }
 
-
-.page-container {
-  padding:0 40px;
+.container {
+  max-width: 1150px;
 }
 
 
@@ -51,11 +52,26 @@ body {
   }
 }
 
+
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none; }
+  .navbar-toggle {
+    display: block; }
+
+  .navbar-collapse.collapse {
+    display: none !important; }
+  .navbar-collapse.collapse.in {
+    display: block!important;
+    margin-top: 0px; }
+}
+
+
 /*************************************
 **************************************
 **************************************
 
-    BEGIN HEADER STYLES
+BEGIN HEADER STYLES
 
 **************************************
 **************************************
@@ -70,7 +86,7 @@ body {
 **************************************
 **************************************
 
-     END HEADER STYLES
+END HEADER STYLES
 
 **************************************
 **************************************
@@ -84,7 +100,7 @@ body {
 **************************************
 **************************************
 
-    BEGIN NAV STYLES
+BEGIN NAV STYLES
 
 **************************************
 **************************************
@@ -109,7 +125,7 @@ body {
 **************************************
 **************************************
 
-     END NAV STYLES
+END NAV STYLES
 
 **************************************
 **************************************
@@ -123,7 +139,7 @@ body {
 **************************************
 **************************************
 
-    BEGIN CONTENT STYLES
+BEGIN CONTENT STYLES
 
 **************************************
 **************************************
@@ -141,11 +157,12 @@ body {
 
 .content-container {
   padding: 15px;
+  background-color: $white;
 }
 
 .promo-container {
   padding: 20px 15px;
-//  background-color: $light-purple;
+  // background-color: $light-purple;
   background: url("https://s3.amazonaws.com/sop-allen/img/bg-promo.jpg") no-repeat $light-purple;
   color: $off-white;
 }
@@ -215,7 +232,7 @@ body {
 **************************************
 **************************************
 
-     END CONTENT STYLES
+END CONTENT STYLES
 
 **************************************
 **************************************
@@ -229,7 +246,7 @@ body {
 **************************************
 **************************************
 
-     BEGIN VIDEO STYLES FOR RESPONSIVE VIDEO
+BEGIN VIDEO STYLES FOR RESPONSIVE VIDEO
 
 **************************************
 **************************************
@@ -256,7 +273,7 @@ body {
 **************************************
 **************************************
 
-     END VIDEO STYLES FOR RESPONSIVE VIDEO
+END VIDEO STYLES FOR RESPONSIVE VIDEO
 
 **************************************
 **************************************
@@ -270,7 +287,7 @@ body {
 **************************************
 **************************************
 
-     BEGIN FOOTER STYLES
+BEGIN FOOTER STYLES
 
 **************************************
 **************************************
@@ -288,9 +305,9 @@ footer p {
 footer a {
   /*color: #428BCA;*/
   color: $white;
-&:hover {
-  color: $white;
-}
+  &:hover {
+    color: $white;
+  }
 }
 
 footer .nav > li > a:hover {
@@ -301,7 +318,7 @@ footer .nav > li > a:hover {
 **************************************
 **************************************
 
-     END FOOTER STYLES
+END FOOTER STYLES
 
 **************************************
 **************************************
