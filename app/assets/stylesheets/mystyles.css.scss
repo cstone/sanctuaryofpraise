@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@import url(http://fonts.googleapis.com/css?family=Arizonia);
+
 $light-purple: #A371C7;
 $dark-purple: #64467A;
 $white: #FFFFFF;
@@ -23,6 +25,7 @@ body {
     float: left;
     margin-right: 5px;
     margin-left: -15px;
+    font-family: 'Arizonia', cursive;
   }
   .navbar-nav {
     float: left;
