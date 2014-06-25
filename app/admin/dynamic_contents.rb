@@ -4,7 +4,7 @@ ActiveAdmin.register DynamicContent do
     f.inputs do
       f.input :title
       f.input :key
-      f.input :value, as: :html_editor
+      f.input :value, :as => :ckeditor, :input_html => { :ckeditor => { :height => 400 } }
     end
     f.actions
   end

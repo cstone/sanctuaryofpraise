@@ -3,7 +3,7 @@ ActiveAdmin.register PrayerRequest do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :content, as: :html_editor
+      f.input :content, :as => :ckeditor, :input_html => { :ckeditor => { :height => 400 } }
       f.input :allow_comments
       f.input :approved
     end

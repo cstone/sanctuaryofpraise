@@ -16,7 +16,7 @@ ActiveAdmin.register Video do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :description, as: :html_editor
+      f.input :description, :as => :ckeditor, :input_html => { :ckeditor => { :height => 400 } }
       f.input :source
       f.input :allow_comments
     end
