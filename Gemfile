@@ -8,12 +8,16 @@ gem 'rails', '3.2.13'
 
 group :development do
   gem 'sqlite3'
+  gem 'haml-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
 
 
 # Gems used only for assets and not required
@@ -31,18 +35,17 @@ end
 
 gem 'jquery-rails'
 gem 'formtastic'
+gem 'formtastic-bootstrap'
 gem 'carrierwave'
 gem 'fog'
 gem 'rmagick', '~>2.13.2', :require => 'RMagick'
 gem 'figaro'
-gem 'formtastic-bootstrap'
-gem 'activeadmin'
-gem 'jquery-ui-rails'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'kaminari'
-gem 'active_admin_editor'
+gem 'ckeditor'
+gem 'mini_magick'
+gem 'devise'
 gem 'just-datetime-picker'
-
-
 
 
 # To use ActiveModel has_secure_password
