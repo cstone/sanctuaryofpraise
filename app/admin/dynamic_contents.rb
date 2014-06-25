@@ -17,7 +17,7 @@ ActiveAdmin.register DynamicContent do
     column :value do |value|
       value.value.truncate(75).html_safe
     end
-    default_actions
+    actions
   end
 
   filter :title

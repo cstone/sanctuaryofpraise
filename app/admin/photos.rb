@@ -30,7 +30,7 @@ ActiveAdmin.register Photo do
       description.description.truncate(75)
     end
     column :allow_comments
-    default_actions
+    actions
   end
 
   filter :title

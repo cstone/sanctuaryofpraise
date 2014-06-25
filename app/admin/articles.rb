@@ -27,7 +27,7 @@ ActiveAdmin.register Article do
     column :body do |body|
       body.body.truncate(75).html_safe
     end
-    default_actions
+    actions
   end
 
 

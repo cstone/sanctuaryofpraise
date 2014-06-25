@@ -9,7 +9,7 @@ ActiveAdmin.register Video do
     end
     column :source
     column :allow_comments
-    default_actions
+    actions
   end
 
 

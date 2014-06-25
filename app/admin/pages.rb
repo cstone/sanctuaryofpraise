@@ -15,7 +15,7 @@ ActiveAdmin.register Page do
     column :content do |content|
       simple_format content.content.truncate(75)
     end
-    default_actions
+    actions
   end
 
   form do |f|

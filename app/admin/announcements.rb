@@ -25,7 +25,7 @@ ActiveAdmin.register Announcement do
       end
     end
     column :allow_comments
-    default_actions
+    actions
   end
 
   filter :title

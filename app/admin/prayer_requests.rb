@@ -19,7 +19,7 @@ ActiveAdmin.register PrayerRequest do
     end
     column :allow_comments
     column :approved
-    default_actions
+    actions
   end
 
 

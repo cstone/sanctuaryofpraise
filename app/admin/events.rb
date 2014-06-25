@@ -5,7 +5,7 @@ ActiveAdmin.register Event do
     selectable_column
     column :title
     column :time
-    default_actions
+    actions
   end
 
 
